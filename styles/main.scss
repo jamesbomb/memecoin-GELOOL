@@ -1,0 +1,142 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+/* SCSS HEX */
+$red-crayola: #E73953ff;
+$emerald: #6EDD9Cff;
+$orange-peel: #FA9800ff;
+$tufts-blue: #008DE0ff;
+
+/* SCSS HSL */
+$red-crayola: hsla(351, 78%, 56%, 1);
+$emerald: hsla(145, 62%, 65%, 1);
+$orange-peel: hsla(36, 100%, 49%, 1);
+$tufts-blue: hsla(202, 100%, 44%, 1);
+
+/* SCSS RGB */
+$red-crayola: rgba(231, 57, 83, 1);
+$emerald: rgba(110, 221, 156, 1);
+$orange-peel: rgba(250, 152, 0, 1);
+$tufts-blue: rgba(0, 141, 224, 1);
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #E73953ff, #6EDD9Cff, #FA9800ff, #008DE0ff);
+$gradient-right: linear-gradient(90deg, #E73953ff, #6EDD9Cff, #FA9800ff, #008DE0ff);
+$gradient-bottom: linear-gradient(180deg, #E73953ff, #6EDD9Cff, #FA9800ff, #008DE0ff);
+$gradient-left: linear-gradient(270deg, #E73953ff, #6EDD9Cff, #FA9800ff, #008DE0ff);
+$gradient-top-right: linear-gradient(45deg, #E73953ff, #6EDD9Cff, #FA9800ff, #008DE0ff);
+$gradient-bottom-right: linear-gradient(135deg, #E73953ff, #6EDD9Cff, #FA9800ff, #008DE0ff);
+$gradient-top-left: linear-gradient(225deg, #E73953ff, #6EDD9Cff, #FA9800ff, #008DE0ff);
+$gradient-bottom-left: linear-gradient(315deg, #E73953ff, #6EDD9Cff, #FA9800ff, #008DE0ff);
+$gradient-radial: radial-gradient(#E73953ff, #6EDD9Cff, #FA9800ff, #008DE0ff);
+
+$primary-color: $gradient-top;
+
+body {
+  font-family: sans-serif;
+  background-color: $primary-color;
+  font-size: 16px;
+}
+
+.about {
+  background-image: url('../assets/bg.webp');
+  background-size: cover;
+  background-position: 10% center;
+  background-repeat: no-repeat;
+  min-height: 70vh;
+
+  display: flex;
+  align-items: flex-end;
+
+  .container>* {
+    filter: drop-shadow(#000 7px 6px 20px);
+    text-shadow: 0 0 2rem black, 0 0 2rem black, 0 0 2rem black, 0 0 2rem black, 0 0 10px black, 0 0 10px black;
+  }
+}
+
+.contacts {
+  display: inline-flex;
+  margin-top: 2rem;
+
+  li {
+    margin-right: 1rem;
+  }
+
+  svg {
+    filter: drop-shadow(6px 6px 0.35rem #000);
+  }
+}
+
+.addressContainer {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 20rem;
+
+  &__title {
+    position: relative;
+    top: -1.2rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    text-align: left;
+    flex: 1 0 100%;
+    text-shadow: none;
+
+    span {
+      position: relative;
+      min-height: 2rem;
+      padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+      background: $orange-peel;
+      width: auto;
+      border: black 0.25rem solid;
+    }
+  }
+
+  &__address {
+    position: relative;
+    top: -1.15rem;
+    text-align: left;
+    flex: 1 0 100%;
+    background: #ccc;
+    border: black 0.25rem solid;
+    padding: 0.5rem;
+    text-shadow: none;
+    color: #000;
+    cursor: pointer;
+
+    i {
+      position: absolute;
+      right: 0.5rem;
+    }
+
+    &:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      background-color: rgba(150, 150, 150, 0.9);
+
+      .copy-icon {
+        display: block;
+      }
+    }
+
+    i.copy-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      display: none;
+      z-index: 10;
+    }
+
+    &.copied i.copy-icon::after {
+      content: 'Copied!';
+      color: #6EDD9C;
+      position: absolute;
+      right: -50px;
+      top: -10px;
+      white-space: nowrap;
+    }
+  }
+}
+
+.logo {
+  background-color: #4ade80;
+}
